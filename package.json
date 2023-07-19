@@ -10,9 +10,19 @@
     "@types/node": "^16.18.38",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-prettier": "^4.0.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -20,7 +30,18 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:prettier": "prettier -c --write src/**/*.{js,ts,jsx,tsx}",
+    "lint:style": "stylelint \"**/*.css\"",
+    "lint:js:fix": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
+    "lint:style:fix": "stylelint \"**/*.css\" --fix",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.css": "stylelint \"**/*.css\"",
+    "**/*.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.ts,.tsx",
+    "**/*.{js,jsx,tsx,ts,css,md,json}": "prettier --ignore-unknown --write"
   },
   "eslintConfig": {
     "extends": [
