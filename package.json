@@ -38,7 +38,8 @@
     "lint:js:fix": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "lint:style:fix": "stylelint \"**/*.css\" --fix",
     "lint-staged": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "lint-staged": {
     "**/*.css": "stylelint \"**/*.css\"",
@@ -62,5 +63,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

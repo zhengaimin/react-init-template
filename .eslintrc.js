@@ -23,6 +23,14 @@ module.exports = {
     project: 'tsconfig.eslint.json',
     tsconfigRootDir: __dirname,
   },
+  overrides: [
+    {
+      files: ['commitlint.config.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 2,
+      },
+    },
+  ],
   rules: {
     quotes: [2, 'single'],
     semi: [2, 'never'],

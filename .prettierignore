@@ -1,6 +1,8 @@
 **/*.png
 **/*.svg
 package.json
+package-lock.json
+tsconfig.eslint.json
 dist
 .DS_Store
 node_modules
