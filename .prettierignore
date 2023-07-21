@@ -6,3 +6,4 @@ tsconfig.eslint.json
 dist
 .DS_Store
 node_modules
+README.md
